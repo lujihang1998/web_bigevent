@@ -13,7 +13,6 @@ $.ajaxPrefilter(function (options) {
     }
 
     options.complete = function (res) {
-        console.log(res);
         //在 complete 回调函数中 res.responseJSON 可以拿到服务器响应回来的数据
         if (res.responseJSON.status === 1 && res.responseJSON.message === '身份认证失败！') {
             // 强制清空token，防止有不法分子手动输入token获取数据
